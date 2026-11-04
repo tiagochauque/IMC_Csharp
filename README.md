@@ -1,6 +1,6 @@
 # Calculadora de IMC (Índice de Massa Corporal)
 
-Aplicação desktop desenvolvida em **C# Windows Forms** (.NET) para cálculo do **Índice de Massa Corporal (IMC)** e respetiva classificação de acordo com as diretrizes da Organização Mundial da Saúde (OMS).
+Aplicação desktop desenvolvida em **C# Windows Forms** (.NET) para o cálculo do **Índice de Massa Corporal (IMC)** e respetiva classificação de acordo com os padrões da Organização Mundial da Saúde (OMS).
 
 ---
 
@@ -10,20 +10,11 @@ Aplicação desktop desenvolvida em **C# Windows Forms** (.NET) para cálculo do
 
 ---
 
-## 📋 Enunciado e Requisitos do Projeto
+## ✨ Funcionalidades
 
-O programa foi desenvolvido cumprindo rigorosamente todos os requisitos especificados:
-
-- **`txtPeso` (TextBox):** Campo de texto para introduzir o peso em quilogramas (kg).
-- **`txtAltura` (TextBox):** Campo de texto para introduzir a altura em metros (m).
-- **`btnCalcular` (Button):** Botão com o texto "Calcular" para processar os dados inseridos.
-- **`lblResultado` (Label):** Etiqueta onde são apresentados o valor final do IMC e a respetiva classificação.
-- **Componente Lógica / Validação Segura:**
-  - Validação estritamente numérica utilizando conversão segura (`double.TryParse`) sem disparar exceções de runtime.
-  - Suporte tanto a vírgula (`,`) quanto a ponto (`.`) como separador decimal.
-  - Verificação de valores estritamente positivos (`> 0`).
-  - Aplicação da fórmula padrão do IMC:
-    $$\text{IMC} = \frac{\text{peso}}{\text{altura}^2}$$
+- **Cálculo do IMC:** Aplica a fórmula padrão dividindo o peso pelo quadrado da altura ($\text{IMC} = \frac{\text{peso}}{\text{altura}^2}$).
+- **Validação Segura de Dados:** Utiliza conversão segura (`double.TryParse`), aceitando valores decimais tanto com vírgula (`,`) quanto com ponto (`.`).
+- **Classificação Automática:** Identifica a categoria correspondente ao IMC obtido.
 
 ---
 
@@ -38,12 +29,6 @@ O programa foi desenvolvido cumprindo rigorosamente todos os requisitos especifi
 | 35,0 a 39,9 | Obesidade grau II |
 | 40,0 ou superior | Obesidade grau III |
 
-*Exemplo de teste demonstrado na imagem:*
-- **Peso:** `70` kg
-- **Altura:** `1,75` m
-- **Cálculo:** $\frac{70}{1,75^2} = \frac{70}{3,0625} \approx 22,86$
-- **Resultado:** `IMC: 22,86` | **Classificação:** `Peso normal`
-
 ---
 
 ## 🛠️ Tecnologias Utilizadas
@@ -57,40 +42,26 @@ O programa foi desenvolvido cumprindo rigorosamente todos os requisitos especifi
 ## 🚀 Como Executar o Projeto
 
 ### Pré-requisitos
-- [.NET SDK](https://dotnet.microsoft.com/download) (versão 8.0, 9.0 ou 10.0) ou Visual Studio com suporte a C# / Windows Forms.
+- [.NET SDK](https://dotnet.microsoft.com/download) ou Visual Studio com suporte a C# / Windows Forms.
 
-### Opção 1: Linha de Comandos (.NET CLI)
-1. Abra um terminal na pasta do projeto:
-   ```bash
-   cd CalculadoraIMC
-   ```
-2. Execute o comando:
-   ```bash
-   dotnet run
-   ```
+### Linha de Comandos (.NET CLI)
+```bash
+dotnet run
+```
 
-### Opção 2: Visual Studio
-1. Abra o ficheiro de solução `IMC_Csharp.slnx` (ou o ficheiro de projeto `CalculadoraIMC.csproj`) no Visual Studio.
-2. Pressione **F5** ou clique no botão **Iniciar (Start)** para compilar e executar.
+### Visual Studio
+Abra o ficheiro `IMC_Csharp.slnx` (ou `CalculadoraIMC.csproj`) e pressione **F5** (ou clique em **Iniciar**).
 
 ---
 
-## 📁 Estrutura do Projeto
+## 📁 Estrutura dos Ficheiros
 
 ```text
-CalculadoraIMC/
 ├── IMC_Csharp.slnx        # Ficheiro de solução do Visual Studio
 ├── CalculadoraIMC.csproj   # Ficheiro de configuração do projeto .NET Windows Forms
 ├── Program.cs             # Código-fonte principal com FormIMC e lógica de cálculo
-├── README.md              # Documentação completa do projeto com screenshot
+├── README.md              # Documentação do projeto
 ├── screenshot.png         # Captura de ecrã da aplicação em funcionamento
 ├── form.jpg               # Imagem da interface
-└── .gitignore             # Ficheiros ignorados pelo controlo de versões (bin, obj, etc.)
+└── .gitignore             # Ficheiros ignorados pelo Git
 ```
-
----
-
-## 📦 Submissão
-
-- **Ficheiro compactado:** `IMC_Csharp.zip`
-- **Repositório GitHub:** `IMC_Csharp` (https://github.com/tiagochauque/IMC_Csharp)
